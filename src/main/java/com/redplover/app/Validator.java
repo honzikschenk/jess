@@ -11,7 +11,8 @@ public class Validator {
         if (((color == 0 && App.whiteTurn && (colorof2 == 1 || colorof2 == -1)) || (color == 1 && !App.whiteTurn && (colorof2 == 0 || colorof2 == -1)))) {
             if (type == 1) {
                 if (((x2 == x1) && colorof2 == -1 && ((y1 - y2 == 1 && App.whiteTurn) || (y2 - y1 == 1 && !App.whiteTurn)))
-                        || (((x2 == x1) && ((y1 - y2 == 2 && state.checkPiece(x2, y2 + 1) == 0 && App.whiteTurn) || (y2 - y1 == 2 && state.checkPiece(x2, y2 - 1) == 0 && !App.whiteTurn))) && (y1 == 7 || y1 == 2))
+                        || (((x2 == x1) && ((y1 - y2 == 2 && state.checkPiece(x2, y2 + 1) == 0 && App.whiteTurn) ||
+                            (y2 - y1 == 2 && state.checkPiece(x2, y2 - 1) == 0 && !App.whiteTurn))) && (y1 == 7 || y1 == 2))
                         || (x2 - 1 == x1 && y1 - y2 == 1 && colorof2 == 1)
                         || (x2 + 1 == x1 && y1 - y2 == 1 && colorof2 ==1)
                         || (x2 - 1 == x1 && y2 - y1 == 1 && colorof2 == 0)

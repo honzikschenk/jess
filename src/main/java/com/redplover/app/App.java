@@ -68,29 +68,25 @@ class App {
         jFrame.setVisible(true);
 
         // Button Listener
-        start.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (b1.isSelected()) {
-                    whiteTurn = true;
-                    Chess game = new Chess();
-                    try {
-                        game.start(true);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                } else if (b2.isSelected()) {
-                    whiteTurn = false;
-                    Chess game = new Chess();
-                    try {
-                        game.start(false);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+        start.addActionListener(e -> {
+            if (b1.isSelected()) {
+                whiteTurn = true;
+                Chess game = new Chess();
+                try {
+                    game.start(true);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
                 }
-                jFrame.dispose();
+            } else if (b2.isSelected()) {
+                whiteTurn = false;
+                Chess game = new Chess();
+                try {
+                    game.start(false);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
+            jFrame.dispose();
         });
     }
 

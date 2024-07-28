@@ -32,7 +32,6 @@ public class GameState {
     }
 
     public int checkPiece(int x, int y) {
-        int result = coordinatePlane.get((x*10)+y);
-        return result;
+        return coordinatePlane.get((x*10)+y);
     }
 }
