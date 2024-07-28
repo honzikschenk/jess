@@ -2,8 +2,6 @@ package com.redplover.app;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 
 class App {
@@ -88,10 +86,5 @@ class App {
             }
             jFrame.dispose();
         });
-    }
-
-    public static void close(int x) {
-        System.out.println(x);
-        System.exit(0);
     }
 }
