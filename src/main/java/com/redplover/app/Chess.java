@@ -35,7 +35,7 @@ public class Chess {
                 boardSquares[x][y] = b;
                 final int yy = y;
                 final int xx = x;
-                boardSquares[x][y].addActionListener(_ -> check(xx, yy));
+                boardSquares[x][y].addActionListener(e -> check(xx, yy));
                 jFrame.add(b);
             }
         }
