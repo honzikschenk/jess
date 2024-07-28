@@ -10,14 +10,14 @@ class App {
     public static boolean whiteTurn = true;
 
     public static void main(String[] args) {
-        final JFrame jFrame = new JFrame("Chees Menu");
+        final JFrame jFrame = new JFrame("Jess Menu");
         jFrame.setLayout(new GridBagLayout());
         jFrame.setSize(300, 200);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridBagConstraints c = new GridBagConstraints();
 
-        JLabel title = new JLabel("Chees");
-        title.setText("Chees");
+        JLabel title = new JLabel("Jess");
+        title.setText("Jess");
         title.setFont(new Font("Times New Roman", Font.BOLD, 50));
         c.fill = GridBagConstraints.VERTICAL;
         c.weightx = 0.0;
