@@ -181,6 +181,10 @@ public class Chess {
                             jFrameOth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             jFrameOth.setVisible(true);
                             JLabel wins = new JLabel("Black wins!");
+                            wins.setHorizontalAlignment(SwingConstants.CENTER);
+                            wins.setHorizontalTextPosition(SwingConstants.CENTER);
+                            wins.setVerticalAlignment(SwingConstants.CENTER);
+                            wins.setVerticalTextPosition(SwingConstants.CENTER);
                             jFrameOth.add(wins);
                         } else {
                             jFrameOth = new JFrame("White wins");
@@ -190,6 +194,10 @@ public class Chess {
                             jFrameOth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             jFrameOth.setVisible(true);
                             JLabel wins = new JLabel("White wins!");
+                            wins.setHorizontalAlignment(SwingConstants.CENTER);
+                            wins.setHorizontalTextPosition(SwingConstants.CENTER);
+                            wins.setVerticalAlignment(SwingConstants.CENTER);
+                            wins.setVerticalTextPosition(SwingConstants.CENTER);
                             jFrameOth.add(wins);
                         }
                         jFrame.dispose();
