@@ -1,7 +1,9 @@
 # Chess Game Application
 
 > [!IMPORTANT]
-> This project is a Java-based chess game application that provides a graphical user interface (GUI) for playing chess. The application allows users to select their color (black or white) and start a game of chess against an opponent.
+> The project is meant to practice mavin use and general CI structure. The chess aspect is very basic.
+
+This project is a Java-based chess game application that provides a graphical user interface (GUI) for playing chess. The application allows users to select their color (black or white) and start a game of chess against an opponent.
 
 ## Project Structure
 
