@@ -1,6 +1,7 @@
 # Chess Game Application
 
-This project is a Java-based chess game application that provides a graphical user interface (GUI) for playing chess. The application allows users to select their color (black or white) and start a game of chess against an opponent.
+> [!IMPORTANT]
+> This project is a Java-based chess game application that provides a graphical user interface (GUI) for playing chess. The application allows users to select their color (black or white) and start a game of chess against an opponent.
 
 ## Project Structure
 
