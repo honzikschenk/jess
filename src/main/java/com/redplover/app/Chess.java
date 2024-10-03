@@ -17,12 +17,16 @@ public class Chess {
     private static int x1 = 100;
     private static int y1 = 100;
 
+    private static boolean isWhite;
+
     public Chess() {}
 
     public void start(boolean isWhite) throws IOException {
         jFrame.setLayout(new GridLayout(8, 8));
         jFrame.setSize(700, 700);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.isWhite = isWhite;
 
         for (int y = 0; y < 8; y++) {
             for (int x = 0; x < 8; x++) {
@@ -32,10 +36,21 @@ public class Chess {
                 } else {
                     b.setBackground(isWhite ? Color.ORANGE : Color.WHITE);
                 }
+
                 boardSquares[x][y] = b;
+
+                if ((x % 2 == 1 && y % 2 == 1) || (x % 2 == 0 && y % 2 == 0)) {
+                    boardSquares[x][y].setBackground(isWhite ? Color.WHITE : Color.ORANGE);
+                } else {
+                    boardSquares[x][y].setBackground(isWhite ? Color.ORANGE : Color.WHITE);
+                }
+
                 final int yy = y;
                 final int xx = x;
                 boardSquares[x][y].addActionListener(e -> check(xx, yy));
+                boardSquares[x][y].setOpaque(true);
+                boardSquares[x][y].repaint();
+
                 jFrame.add(b);
             }
         }
@@ -147,19 +162,17 @@ public class Chess {
         if (x1 == 100) {
             x1 = x;
             y1 = y;
+            boardSquares[x1-1][y1-1].setBackground(Color.RED);
+            boardSquares[x1-1][y1-1].repaint();
         } else {
             x2 = x;
             y2 = y;
 
-            if (x1 == x2 && y1 == y2) {
-                System.out.println("break");
-            } else {
+            if (!(x1 == x2 && y1 == y2)) {
                 int symbol = state.checkPiece(x1, y1);
                 int type = symbol / 10;
                 int color = symbol % 10;
                 int cond = state.checkPiece(x2, y2);
-                System.out.println("x1: " + x1 + "\nx2: " + x2 + "\ny1: " + y1 + "\ny2: " + y2);
-                System.out.println(val.validation(type, color, x1, x2, y1, y2));
                 if (((App.whiteTurn && state.checkPiece(x1, y1) % 10 == 0) || (!App.whiteTurn && state.checkPiece(x1, y1) % 10 == 1)) && val.validation(type, color, x1, x2, y1, y2)) {
                     boardSquares[x1-1][y1-1].removeAll();
                     boardSquares[x2-1][y2-1].removeAll();
@@ -168,81 +181,37 @@ public class Chess {
                     boardSquares[x2-1][y2-1].setText(Integer.toString(i));
                     state.updateMap(x2 * 10 + y2, state.checkPiece(x1, y1));
                     state.updateMap(x1 * 10 + y1, 0);
-                    //boardSquares[x2-1][y2-1].add(new JLabel(new ImageIcon(ImageIO.read(new File("../../../resources/" + state.checkPiece(x1, y1) + ".png")))));
+                    boardSquares[x2-1][y2-1].add(new JLabel(new ImageIcon(Objects.requireNonNull(App.class.getResource("/" + i + ".png")))));
                     App.whiteTurn = !App.whiteTurn;
                     jFrame.repaint();
                     if (cond == 60 || cond == 61) {
                         JFrame jFrameOth;
-                        if (App.whiteTurn) {
-                            jFrameOth = new JFrame("Black wins");
-                            jFrameOth.setSize(200, 200);
-                            jFrameOth.setLocationRelativeTo(null);
-                            jFrameOth.setResizable(false);
-                            jFrameOth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            jFrameOth.setVisible(true);
-                            JLabel wins = new JLabel("Black wins!");
-                            wins.setHorizontalAlignment(SwingConstants.CENTER);
-                            wins.setHorizontalTextPosition(SwingConstants.CENTER);
-                            wins.setVerticalAlignment(SwingConstants.CENTER);
-                            wins.setVerticalTextPosition(SwingConstants.CENTER);
-                            jFrameOth.add(wins);
-                        } else {
-                            jFrameOth = new JFrame("White wins");
-                            jFrameOth.setSize(200, 200);
-                            jFrameOth.setLocationRelativeTo(null);
-                            jFrameOth.setResizable(false);
-                            jFrameOth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            jFrameOth.setVisible(true);
-                            JLabel wins = new JLabel("White wins!");
-                            wins.setHorizontalAlignment(SwingConstants.CENTER);
-                            wins.setHorizontalTextPosition(SwingConstants.CENTER);
-                            wins.setVerticalAlignment(SwingConstants.CENTER);
-                            wins.setVerticalTextPosition(SwingConstants.CENTER);
-                            jFrameOth.add(wins);
-                        }
+                        jFrameOth = new JFrame(App.whiteTurn ? "Black" : "White" + " wins");
+                        jFrameOth.setSize(200, 200);
+                        jFrameOth.setLocationRelativeTo(null);
+                        jFrameOth.setResizable(false);
+                        jFrameOth.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        jFrameOth.setVisible(true);
+                        JLabel wins = new JLabel(App.whiteTurn ? "Black" : "White" + " wins!");
+                        wins.setHorizontalAlignment(SwingConstants.CENTER);
+                        wins.setHorizontalTextPosition(SwingConstants.CENTER);
+                        wins.setVerticalAlignment(SwingConstants.CENTER);
+                        wins.setVerticalTextPosition(SwingConstants.CENTER);
+                        jFrameOth.add(wins);
                         jFrame.dispose();
                     }
                 }
             }
 
+            if ((x1-1 % 2 == 1 && y1-1 % 2 == 1) || (x1-1 % 2 == 0 && y1-1 % 2 == 0)) {
+                boardSquares[x1-1][y1-1].setBackground(isWhite ? Color.WHITE : Color.ORANGE);
+            } else {
+                boardSquares[x1-1][y1-1].setBackground(isWhite ? Color.ORANGE : Color.WHITE);
+            }
+            boardSquares[x][y].setOpaque(true);
+            boardSquares[x1-1][y1-1].repaint();
             x1 = 100;
             y1 = 100;
         }
     }
-
-        /*
-        String piece = "";
-        if (symbol == 0) {
-            piece = "blank";
-        } else if (color == 0) {
-            if (type == 1) {
-                piece = "white pawn";
-            } else if (type == 2) {
-                piece = "white rook";
-            } else if (type == 3) {
-                piece = "white knight";
-            } else if (type == 4) {
-                piece = "white bishop";
-            } else if (type == 5) {
-                piece = "white queen";
-            } else if (type == 6) {
-                piece = "white king";
-            }
-        } else if (color == 1) {
-            if (type == 1) {
-                piece = "black pawn";
-            } else if (type == 2) {
-                piece = "black rook";
-            } else if (type == 3) {
-                piece = "black knight";
-            } else if (type == 4) {
-                piece = "black bishop";
-            } else if (type == 5) {
-                piece = "black queen";
-            } else if (type == 6) {
-                piece = "black king";
-            }
-        }
-        System.out.println("The piece is a " + piece + ".");
-        */
 }
