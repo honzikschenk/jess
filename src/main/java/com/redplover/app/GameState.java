@@ -34,4 +34,8 @@ public class GameState {
     public int checkPiece(int x, int y) {
         return coordinatePlane.get((x*10)+y);
     }
+
+    public HashMap<Integer, Integer> getMap() {
+        return coordinatePlane;
+    }
 }

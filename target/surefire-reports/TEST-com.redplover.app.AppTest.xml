@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/hschenk/Documents/Repos/jess/target/surefire/surefirebooter12299996180948818951.jar /Users/hschenk/Documents/Repos/jess/target/surefire 2024-10-03T10-48-44_142-jvmRun1 surefire9353221529741001755tmp surefire_013559930982668138901tmp"/>
+    <property name="sun.java.command" value="/Users/hschenk/Documents/Repos/jess/target/surefire/surefirebooter4069659768015967997.jar /Users/hschenk/Documents/Repos/jess/target/surefire 2024-10-26T02-15-44_904-jvmRun1 surefire6215001131500559960tmp surefire_013395451604480300874tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/hschenk/Documents/Repos/jess/target/test-classes:/Users/hschenk/Documents/Repos/jess/target/classes:/Users/hschenk/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar:/Users/hschenk/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,13 +28,13 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/hschenk/Documents/Repos/jess/target/surefire/surefirebooter12299996180948818951.jar"/>
+    <property name="surefire.real.class.path" value="/Users/hschenk/Documents/Repos/jess/target/surefire/surefirebooter4069659768015967997.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.2"/>
     <property name="user.name" value="hschenk"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="15.0"/>
+    <property name="os.version" value="15.0.1"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
