@@ -19,6 +19,8 @@ public class Chess {
 
     private static boolean isWhite;
 
+    private Minimax minimax = new Minimax();
+
     public Chess() {}
 
     public void start(boolean isWhite) throws IOException {
@@ -212,6 +214,18 @@ public class Chess {
             boardSquares[x1-1][y1-1].repaint();
             x1 = 100;
             y1 = 100;
+
+            if (!App.whiteTurn) {
+                makeBotMove();
+            }
+        }
+    }
+
+    private void makeBotMove() {
+        Minimax.Move bestMove = minimax.minimax(state, 3, Integer.MIN_VALUE, Integer.MAX_VALUE, false);
+        if (bestMove != null && bestMove.move != null) {
+            // Apply the best move to the game state
+            // This is a placeholder implementation
         }
     }
 }

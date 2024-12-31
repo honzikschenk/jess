@@ -21,11 +21,41 @@ The `Validator` class is responsible for validating the moves of chess pieces ba
     - Returns:
         - A boolean indicating whether the move is valid.
 
+- `public boolean isCheck(int color)`:
+    - Checks if the current board state is a check for the given color.
+    - Parameters:
+        - `color`: An integer representing the color of the player (0 = White, 1 = Black).
+    - Returns:
+        - A boolean indicating whether the given color is in check.
+
+- `public boolean isCheckmate(int color)`:
+    - Checks if the current board state is a checkmate for the given color.
+    - Parameters:
+        - `color`: An integer representing the color of the player (0 = White, 1 = Black).
+    - Returns:
+        - A boolean indicating whether the given color is in checkmate.
+
+- `public boolean isStalemate(int color)`:
+    - Checks if the current board state is a stalemate for the given color.
+    - Parameters:
+        - `color`: An integer representing the color of the player (0 = White, 1 = Black).
+    - Returns:
+        - A boolean indicating whether the given color is in stalemate.
+
 #### Usage Example:
 ```java
 public static void main(String[] args) {
     Validator validator = new Validator();
     boolean isValid = validator.validation(1, 0, 2, 2, 7, 5); // Validate a move for a white pawn
     System.out.println("Is the move valid? " + isValid);
+
+    boolean isCheck = validator.isCheck(0); // Check if white is in check
+    System.out.println("Is white in check? " + isCheck);
+
+    boolean isCheckmate = validator.isCheckmate(1); // Check if black is in checkmate
+    System.out.println("Is black in checkmate? " + isCheckmate);
+
+    boolean isStalemate = validator.isStalemate(0); // Check if white is in stalemate
+    System.out.println("Is white in stalemate? " + isStalemate);
 }
 ```

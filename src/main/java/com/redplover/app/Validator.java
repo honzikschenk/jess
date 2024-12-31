@@ -104,4 +104,19 @@ public class Validator {
             } else return false;
         } else return false;
     }
+
+    public boolean isCheck(int color) {
+        // Implement check detection logic
+        return false;
+    }
+
+    public boolean isCheckmate(int color) {
+        // Implement checkmate detection logic
+        return false;
+    }
+
+    public boolean isStalemate(int color) {
+        // Implement stalemate detection logic
+        return false;
+    }
 }

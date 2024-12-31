@@ -10,6 +10,8 @@ The `Chess` class represents a chess game with a graphical user interface (GUI) 
 - `Validator val`: An instance of the `Validator` class to validate moves.
 - `JFrame jFrame`: The main frame for the chess game.
 - `static int x1, y1`: Coordinates for the first selected square.
+- `private static boolean isWhite`: A boolean indicating whether the player is playing as white.
+- `private Minimax minimax`: An instance of the `Minimax` class to handle the bot's move logic.
 
 #### Constructor:
 - `public Chess()`: Initializes a new instance of the `Chess` class.
@@ -36,6 +38,9 @@ The `Chess` class represents a chess game with a graphical user interface (GUI) 
     - Handles the logic for selecting and moving pieces on the board.
     - Parameters:
         - `x`, `y`: Coordinates of the selected square.
+
+- `private void makeBotMove()`:
+    - Handles the bot's move logic using the minimax algorithm with alpha-beta pruning.
 
 #### Usage Example:
 ```java
