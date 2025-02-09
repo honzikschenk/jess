@@ -1,4 +1,4 @@
-# Chess Game Application
+# Jess (Java Chess) - Chess Game Application
 
 > [!IMPORTANT]
 > The project is meant to practice Mavin use and general CI structure. The chess aspect is very basic.
